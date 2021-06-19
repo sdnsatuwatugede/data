@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/gridjs/dist/gridjs.production.min.js"></script>
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+    <title>bdsiswabaru</title>
+  </head>
+  <body>
+    <div id="table-gridjs"></div>
+    <script>
+      new gridjs.Grid({
+        sort: true,
+        search: true,
+        pagination: true,
+        columns: ["Nama Lengkap", "Change Frequency", "Priority"],
+        server: {
+          url: "https://spreadsheets.google.com/feeds/list/1YpnaMqdV0Y_HgaqgaWrN236D7kg6AVdUhiwyidEfZNY/od6/public/values?alt=json",
+          handle: (res) => {
+            return res.text().then((str) => new window.DOMParser().parseFromString(str, "text/xml"));
+          },
+          then: (data) => {
+            return Array.from(data.querySelectorAll("url")).map((row) => [row.querySelector("loc").innerHTML, row.querySelector("changefreq").innerHTML, row.querySelector("priority").innerHTML]);
+          },
+        },
+      }).render(document.getElementById("table-gridjs"));
+    </script>
+  </body>
+</html>
