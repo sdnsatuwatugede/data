@@ -10,9 +10,8 @@ xmlhttp.onreadystatechange = function () {
       let hadir = data[i]["gsx$_cpzh4"]["$t"];
       let ijin = data[i]["gsx$_cre1l"]["$t"];
       let sakit = data[i]["gsx$_chk2m"]["$t"];
-      let alpha = data[i]["gsx$_ciyn3"]["$t"];
 
-      document.getElementById("demo").innerHTML += "<tr>" + "<td>" + nama + "</td>" + "<td>" + nis + "</td>" + "<td>" + hadir + "</td>" + "<td>" + ijin + "</td>" + "<td>" + sakit + "<td>" + alpha + "</td>" + "</td>" + "</tr>";
+      document.getElementById("demo").innerHTML += "<tr>" + "<td>" + nama + "</td>" + "<td>" + nis + "</td>" + "<td>" + hadir + "</td>" + "<td>" + ijin + "</td>" + "<td>" + sakit + "</td>" + "</tr>";
     }
   }
 };
