@@ -8,9 +8,8 @@ xmlhttp.onreadystatechange = function () {
       let time = data[i]["gsx$_cn6ca"]["$t"];
       let nama = data[i]["gsx$_cokwr"]["$t"];
       let tanggal = data[i]["gsx$_cpzh4"]["$t"];
-      let foto = data[i]["gsx$_chk2m"]["$t"];
 
-      document.getElementById("demo").innerHTML += "<tr>" + "<td>" + nama + "</td>" + "<td>" + tanggal + "</td>" + "<td>" + time + "</td>" + "<td>" + foto + "</td>" + "</tr>";
+      document.getElementById("demo").innerHTML += "<tr>" + "<td>" + nama + "</td>" + "<td>" + tanggal + "</td>" + "<td>" + time + "</td>" + "</tr>";
     }
   }
 };

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"><link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
@@ -18,7 +18,7 @@
         width: 100%;
         font-size: 16px;
         padding: 12px 20px 12px 40px;
-        border: 1px solid #ddd;
+        border: 1px solid rgb(11, 217, 253);
         margin-bottom: 12px;
       }
 
@@ -26,7 +26,7 @@
         border-collapse: collapse;
         width: 100%;
         border: 1px solid #ddd;
-        font-size: 18px;
+        font-size: 12px;
       }
 
       #myTable th,
@@ -41,24 +41,32 @@
 
       #myTable tr.header,
       #myTable tr:hover {
-        background-color: #f1f1f1;
+        background-color: #0d85f5;
       }
     </style>
   </head>
   <body>
-    <h2>Rekap Absensi Pegawai PPKM</h2>
+    <h2 class="text-center">REKAP ABSENSI PEGAWAI PPKM</h2>
+    <h3 class="text-center">PPKM TANGGAL 12 - 20 JULI 2021</h3>
 
     <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Nama Pegawai ..." title="Type in a name" />
 
-    <table id="myTable">
-      <tr class="header">
-        <th style="width: 50%">Nama Pegawai</th>
-        <th style="width: 25%">Tanggal Absen</th>
-        <th style="width: 25%">Tanggal Absen / Terekam</th>
-        <th style="width: 25%">Foto</th>
-      </tr>
-      <tbody id="demo"></tbody>
-    </table>
+    <div class="table-responsive">
+      <table id="myTable" class="table table-striped align-middle">
+        <thead>
+          <tr class="table-warning">
+            <th class="align-middle">NAMA PEGAWAI</th>
+            <th class="align-middle">TANGGAL</th>
+            <th class="align-middle">TANGGAL TEREKAM</th>
+          </tr>
+        </thead>
+        <tbody id="demo"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/script.js"></script>
 
     <script>
